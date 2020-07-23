@@ -6,9 +6,9 @@ api = Api(app)
 myclient = pymongo.MongoClient("mongodb+srv://kds:Password123@cluster0.gohov.mongodb.net/transport?retryWrites=true&w=majority")
 mydb =myclient['transport']
 mycol=mydb['trips']
-class Video(Resource):
+class Estimate(Resource):
     def get(self):
-        return "this works"
+        return "app running"
     def post(self):
         f=int(request.form['f'])#from_station
         t=int(request.form['t'])#to_station
@@ -23,6 +23,6 @@ class Video(Resource):
         ret_obj['est']=est
         return ret_obj
 
-api.add_resource(Video, "/")
+api.add_resource(Estimate, "/")
 if __name__ == "__main__":
     app.run(debug=True)
