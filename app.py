@@ -7,6 +7,8 @@ myclient = pymongo.MongoClient("mongodb+srv://kds:Password123@cluster0.gohov.mon
 mydb =myclient['transport']
 mycol=mydb['trips']
 class Video(Resource):
+    def get(self):
+        return "this works"
     def post(self):
         f=int(request.form['f'])#from_station
         t=int(request.form['t'])#to_station
